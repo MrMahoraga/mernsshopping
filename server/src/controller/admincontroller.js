@@ -43,7 +43,7 @@ exports.createadmin = async (req, res) => {
 
     exports.loginadmin = async (req, res) => {
         try {
-            console.log(req.body)
+            
             const data = req.body;
             const checkMailId = await adminmodel.findOne({ email: data.email })
     
@@ -75,7 +75,7 @@ exports.deleteUserApi = async (req, res) => {
     try {
         // console.log(req.params.UserId)
         let id = req.params.UserId
-        console.log(id)
+        // console.log(id)
         const deleteduser = await usermodel.findOneAndUpdate(
             { _id:id },
 
@@ -88,3 +88,6 @@ exports.deleteUserApi = async (req, res) => {
     }
     catch (err) { return errorhandling(err, res) }
 }
+
+
+exports.deleteUserApi

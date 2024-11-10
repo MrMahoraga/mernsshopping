@@ -3,8 +3,10 @@ const mongoose = require("mongoose");
 const { ValidName, ValidPassword, ValidUserName } = require('../validation/allvalidation')
 const userSchema = new mongoose.Schema({
     profileImg: { type: String, trim: true },
-    isdeleted: { type: Boolean, default: false , trim: true },
-    
+    OtpVerification: { type: Number, trim: true },
+    isOTPVerified: { type: Boolean, default: false, trim: true },
+    isdeleted: { type: Boolean, default: false, trim: true },
+    adminid: { type: String, trim: true },
     name: {
         type: String, required: [true, "Please provide the Name"],
         validate: [ValidName, "Please provide the User Valid Name"], trim: true
